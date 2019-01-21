@@ -22,22 +22,28 @@ div, p, ul {
 
 /* === chat === */
 .chat {
+  display: flex;
+  height: 100vh;
+  min-height: 375px;
+  flex-direction: column;
   background: url('./assets/bg.svg');
   background-size: cover;
 
   &__wrapp {
+    flex: 1 1 auto;
+    overflow: auto;
     border-bottom: 1px solid $border;
   }
 
   &__dialog {
     padding: 40px 10px 10px 0;
     max-height: 485px;
-    overflow: auto;
   }
 
   // dialog blocks
   .message {
     display: flex;
+    flex: 1 1 auto;
     padding: 10px 10px 10px 15px;
   
     &__avatar {
