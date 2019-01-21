@@ -1,0 +1,160 @@
+@import './colors.scss';
+
+/* === global === */
+body {
+  margin: 0; 
+	padding: 0;
+  font: normal 14px 'Roboto';
+  line-height: 1.4;
+  color: $black;
+}
+.content {
+  margin: 0 auto;
+  min-width: 320px;
+  max-width: 650px;
+}
+
+div, p, ul {
+  word-break: break-word;
+}
+/* === end global === */
+
+
+/* === chat === */
+.chat {
+  background: url('./assets/bg.svg');
+  background-size: cover;
+
+  &__wrapp {
+    border-bottom: 1px solid $border;
+  }
+
+  &__dialog {
+    padding: 40px 10px 10px 0;
+    max-height: 485px;
+    overflow: auto;
+  }
+
+  // dialog blocks
+  .message {
+    display: flex;
+    padding: 10px 10px 10px 15px;
+  
+    &__avatar {
+    }
+
+    &__msg {
+      position: relative;
+      max-width: 455px;
+      background: $gray;
+      border-radius: 5px;
+      line-height: 24px;
+      font-size: 14px;
+      padding: 15px;
+      margin: 0 19px;
+    }
+
+    &__hr {
+      display: block;
+      text-align: center;
+      overflow: hidden;
+      white-space: nowrap;
+      padding: 10px 0;
+
+      &_date {
+        position: relative;
+        display: inline-block;
+
+        &:before,
+        &:after {
+          content: "";
+          position: absolute;
+          top: 50%;
+          width: 9999px;
+          height: 1px;
+          background: $gray;
+        }
+
+        &:before {
+          right: 100%;
+          margin-right: 15px;
+        }
+    
+        &:after {
+          left: 100%;
+          margin-left: 15px;
+        }
+      }
+    }
+
+    &_left {
+      flex-direction: row;
+
+      .message__msg:after {
+        content: ''; 
+        position: absolute;
+        left: -10px;
+        top: 6px;
+        border: 10px solid transparent;
+        border-top: 10px solid $gray;
+      }
+    }
+
+    &_right {
+      flex-direction: row-reverse;
+
+      .message__msg:after {
+        content: ''; 
+        position: absolute;
+        right: -10px;
+        top: 6px;
+        border: 10px solid transparent;
+        border-top: 10px solid $gray;
+      }
+    }
+  }
+
+  // send blocks
+  .send-message {
+    display: flex;
+    flex-direction: column;
+    padding: 20px 20px;
+
+    &__display {
+
+    }
+    &__textarea {
+      border: 1px solid $border;
+      box-sizing: border-box;
+      border-radius: 4px;
+      width: 100%;
+      min-height: 129px;
+      max-width: 590px;
+      padding: 10px;
+      font-size: 14px;
+      outline: none;
+      resize: none;
+    }
+
+    &__block-button {
+      margin-top: 16px;
+    }
+
+    &__button {
+      width: 144px;
+      height: 41px;
+      background: $blue;
+      box-shadow: 0px 4px 6px rgba(15, 84, 185, 0.3);
+      border-radius: 21px;
+      border: 0;
+      outline: none;
+      line-height: 24px;
+      font-size: 16px;
+      color: #FFFFFF;
+      cursor: pointer;
+    }
+  }
+
+}
+/* === end chat === */
+
